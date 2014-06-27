@@ -1,0 +1,758 @@
+.col-xs-12
+  .page-header.page-header-with-buttons
+    %h1.pull-left
+      %i.icon-dashboard
+      %span Dashboard
+    .pull-right
+      .btn-group
+        %a.btn.btn-white.hidden-xs{:href => "#"} Last month
+        %a.btn.btn-white{:href => "#"} Last week
+        %a.btn.btn-white{:href => "#"} Today
+        %a#daterange.btn.btn-white{:href => "#"}
+          %i.icon-calendar
+          %span Custom
+          %b.caret
+  .alert.alert-info.alert-dismissable
+    %a.close{"data-dismiss" => "alert", :href => "#"} &times;
+    Welcome to
+    %strong Flatty (v2.2)
+    \- I hope you'll like it. Don't forget - you can change theme color in top right corner
+    %i.icon-cog
+    if you want.
+  .row.box.box-transparent
+    .col-xs-4.col-sm-2
+      .box-quick-link.blue-background
+        %a{:href => "#"}
+          .header
+            .icon-comments
+          .content Comments
+    .col-xs-4.col-sm-2
+      .box-quick-link.green-background
+        %a{:href => "#"}
+          .header
+            .icon-star
+          .content Veeeery long title of this quick link
+    .col-xs-4.col-sm-2
+      .box-quick-link.orange-background
+        %a{:href => "#"}
+          .header
+            .icon-magic
+          .content Magic
+    .col-xs-4.col-sm-2
+      .box-quick-link.purple-background
+        %a{:href => "#"}
+          .header
+            .icon-eye-open
+          .content Show
+    .col-xs-4.col-sm-2
+      .box-quick-link.red-background
+        %a{:href => "orders.html"}
+          .header
+            .icon-inbox
+          .content Orders
+    .col-xs-4.col-sm-2
+      .box-quick-link.muted-background
+        %a{:href => "#"}
+          .header
+            .icon-refresh
+          .content Spinning
+  .row
+    .col-sm-6.box
+      .box-header
+        .title
+          %i.icon-inbox
+          Orders
+        .actions
+          %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+            %i.icon-remove
+          %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+            %i
+      .box-content
+        #stats-chart1
+    .col-sm-6.box
+      .box-header
+        .title
+          %i.icon-group
+          Users
+        .actions
+          %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+            %i.icon-remove
+          %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+            %i
+      .box-content
+        #stats-chart2
+  %hr.hr-drouble/
+  .row
+    .col-sm-12.col-md-6
+      .box
+        .box-header
+          .title
+            .icon-inbox
+            Orders
+          .actions
+            %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+              %i.icon-remove
+            %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+              %i
+        .row
+          .col-sm-6
+            .box-content.box-statistic
+              %h3.title.text-error 191
+              %small New
+              .text-error.icon-inbox.align-right
+            .box-content.box-statistic
+              %h3.title.text-warning 311
+              %small In process
+              .text-warning.icon-check.align-right
+            .box-content.box-statistic
+              %h3.title.text-info 3
+              %small Pending
+              .text-info.icon-time.align-right
+          .col-sm-6
+            .box-content.box-statistic
+              %h3.title.text-primary 3
+              %small Shipped
+              .text-primary.icon-truck.align-right
+            .box-content.box-statistic
+              %h3.title.text-success 981
+              %small Completed
+              .text-success.icon-flag.align-right
+            .box-content.box-statistic
+              %h3.title.text-muted 0
+              %small Canceled
+              .text-muted.icon-remove.align-right
+    .col-sm-6.col-md-3
+      .box
+        .box-header
+          .title
+            %i.icon-group
+            Visitors
+        .row
+          .col-sm-12
+            .box-content.box-statistic
+              %h3.title.text-error 9100
+              %small Unique
+              .text-error.icon-user.align-right
+            .box-content.box-statistic
+              %h3.title.text-warning 41 000
+              %small Pageviews
+              .text-warning.icon-book.align-right
+            .box-content.box-statistic
+              %h3.title.text-primary 12:21
+              %small Average time
+              .text-primary.icon-time.align-right
+    .col-sm-6.col-md-3
+      .box
+        .box-header
+          .title
+            %i.icon-comments
+            Comments
+        .row
+          .col-sm-12
+            .box-content.box-statistic
+              %h3.title.text-error 91
+              %small New
+              .text-error.icon-plus.align-right
+            .box-content.box-statistic
+              %h3.title.text-success 1
+              %small Approved
+              .text-success.icon-ok.align-right
+            .box-content.box-statistic
+              %h3.title.text-info 123
+              %small Pending
+              .text-info.icon-time.align-right
+  .group-header
+    .row
+      .col-sm-6.col-sm-offset-3
+        .text-center
+          %h2 Todo & Recent activity
+          %small.text-muted Items in todo list can be reordered by drag & drop, you can mark them as important, complete, or you can delete them!
+  .row
+    .col-sm-12.col-md-6
+      .row.todo-list
+        .col-sm-12
+          .box
+            .box-header
+              .title
+                %i.icon-list-alt
+                Todo lists
+              .actions
+                %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+                  %i.icon-remove
+                %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+                  %i
+            .box-content.box-no-padding
+              .sortable-container
+                %form.new-todo{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+                  %input{:name => "authenticity_token", :type => "hidden"}/
+                  %input#todo_name.form-control{:name => "todo[name]", :placeholder => "Type your new todo here...", :type => "text"}/
+                  %button.btn.btn-success{:type => "submit"}
+                    %i.icon-plus
+                .date.text-contrast Today
+                %ul.list-unstyled.sortable{"data-sortable-axis" => "y", "data-sortable-connect" => ".sortable"}
+                  %li.important.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Molestias non et
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Praesentium quas est
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.done.item
+                    %label.check.pull-left.todo
+                      %input{:checked => "checked", :type => "checkbox"}/
+                      %span Dolores sed libero
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %i.icon-envelope-alt
+                      %span Ex numquam inventore ut
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                .date.text-contrast Due Wed, Sep 19, 2013
+                %ul.list-unstyled.sortable{"data-sortable-axis" => "y", "data-sortable-connect" => ".sortable"}
+                  %li.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Libero provident consequatur vitae ut
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.important.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Omnis dolorem aperiam deleniti et
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Sed voluptates consequuntur esse accusamus
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+                  %li.item
+                    %label.check.pull-left.todo
+                      %input{:type => "checkbox"}/
+                      %span Dolor illum assumenda ut possimus
+                    .actions.pull-right
+                      %a.btn.btn-link.edit.has-tooltip{"data-placement" => "top", :href => "#", :title => "Edit todo"}
+                        %i.icon-pencil
+                      %a.btn.btn-link.remove.has-tooltip{"data-placement" => "top", :href => "#", :title => "Remove todo"}
+                        %i.icon-remove
+                      %a.btn.btn-link.important.has-tooltip{"data-placement" => "top", :href => "#", :title => "Mark as important"}
+                        %i.icon-bookmark-empty
+    .col-sm-12.col-md-6
+      .row.recent-activity
+        .col-sm-12
+          .box
+            .box-header
+              .title
+                %i.icon-refresh
+                Recent activity
+              .actions
+                %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+                  %i.icon-remove
+                %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+                  %i
+            .box-content.box-no-padding
+              %ul.nav.nav-tabs.nav-tabs-simple
+                %li.active
+                  %a.green-border{"data-toggle" => "tab", :href => "#users"}
+                    %i.icon-user.text-green
+                    Users
+                %li
+                  %a.purple-border{"data-toggle" => "tab", :href => "#comments"}
+                    %i.icon-comments.text-purple
+                    Comments
+                %li.dropdown
+                  %a.dropdown-toggle.orange-border{"data-toggle" => "dropdown", :href => "#"}
+                    Dropdown
+                    %i.icon-caret-down.text-contrast
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "#"} Hi there!
+              .tab-content
+                #users.tab-pane.fade.in.active
+                  %ul.list-unstyled.users.list-hover.list-striped
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Jean
+                        signed in
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:34:37 +0200"} September 15, 2013 - 17:34
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Kendrick
+                        uploaded photo
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:35:37 +0200"} September 15, 2013 - 17:35
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Jason
+                        signed in
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:36:37 +0200"} September 15, 2013 - 17:36
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} inley
+                        signed up
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:37:37 +0200"} September 15, 2013 - 17:37
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Allen
+                        signed in
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:38:37 +0200"} September 15, 2013 - 17:38
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Alexis
+                        signed in
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:39:37 +0200"} September 15, 2013 - 17:39
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Johnnie
+                        commented
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:40:37 +0200"} September 15, 2013 - 17:40
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Alma
+                        commented
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:41:37 +0200"} September 15, 2013 - 17:41
+                        %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .action.pull-left
+                        %a.text-contrast{:href => "#"} Brock
+                        uploaded photo
+                      %small.date.pull-right.text-muted
+                        %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:42:37 +0200"} September 15, 2013 - 17:42
+                        %i.icon-time
+                  .load-more
+                    %a#users-more-activity.btn.btn-block{"data-loading-text" => "&lt;i class='icon-spinner icon-spin'&gt;&lt;/i&gt; Loading more...", :href => "#"}
+                      %i.icon-circle-arrow-down
+                      Load more
+                #comments.tab-pane.fade
+                  %ul.list-unstyled.comments.list-hover.list-striped
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Kellie
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Qui vel omnis quia ea quasi voluptate rerum cum sit. Corporis qui ducimus quidem
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 18:33:37 +0200"} September 15, 2013 - 18:33
+                          %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Jerald
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Hic aut earum blanditiis sit culpa in saepe reiciendis. Alias expedita officia magnam possimus et possimus culpa assumenda consequatur qui aut vel
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 19:33:37 +0200"} September 15, 2013 - 19:33
+                          %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Cathleen
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Eum pariatur quod sapiente nulla. Minima modi cumque necessitatibus quam dolor corrupti fugiat impedit voluptas nobis nisi consequatur aut
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 20:33:37 +0200"} September 15, 2013 - 20:33
+                          %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Zoe
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Ut quibusdam debitis eaque et quis sapiente eos tempore distinctio quia et deleniti. Quae libero ullam harum mollitia non sunt placeat temporibus consequatur
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 21:33:37 +0200"} September 15, 2013 - 21:33
+                          %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        .icon-user
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Toby
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Dolorem id consequatur quod dolor natus. Optio fugiat qui qui debitis
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 22:33:37 +0200"} September 15, 2013 - 22:33
+                          %i.icon-time
+                    %li
+                      .avatar.pull-left
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .body
+                        .name
+                          %a.text-contrast{:href => "#"} Lynette
+                        .actions
+                          %a.btn.btn-link.ok.has-tooltip{:href => "#", :title => "Approve"}
+                            %i.icon-thumbs-up
+                          %a.btn.btn-link.remove.has-tooltip{:href => "#", :title => "Remove"}
+                            %i.icon-thumbs-down
+                        .text Et aliquam et et. Nemo natus est sint modi occaecati
+                      .text-right
+                        %small.date.text-muted
+                          %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 23:33:37 +0200"} September 15, 2013 - 23:33
+                          %i.icon-time
+                  .load-more
+                    %a#comments-more-activity.btn.btn-block{"data-loading-text" => "&lt;i class='icon-spinner icon-spin'&gt;&lt;/i&gt; Loading more...", :href => "#"}
+                      %i.icon-circle-arrow-down
+                      Load more
+  .group-header
+    .row
+      .col-sm-6.col-sm-offset-3
+        .text-center
+          %h2 Chat & Quick e-mail
+          %small.text-muted You can send some message in chat below!
+  .row
+    .col-sm-6
+      .row
+        .chat
+          .col-sm-12
+            .box
+              .box-header.orange-background
+                .title
+                  %i.icon-comments-alt
+                  Chat
+                .actions
+                  %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+                    %i.icon-remove
+                  %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+                    %i
+              .box-content.box-no-padding
+                .scrollable{"data-scrollable-height" => "300", "data-scrollable-start" => "bottom"}
+                  %ul.list-unstyled.list-hover.list-striped
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:42:37 +0200"} September 15, 2013 - 17:42
+                            %i.icon-time
+                      .body
+                        Vel recusandae aspernatur atque repudiandae asperiores aut commodi recusandae voluptas ab vel dignissimos necessitatibus ipsam
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Moses
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:41:37 +0200"} September 15, 2013 - 17:41
+                            %i.icon-time
+                      .body
+                        Sint illo aut illo nostrum omnis et dolorem et dignissimos
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Moses
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:40:37 +0200"} September 15, 2013 - 17:40
+                            %i.icon-time
+                      .body
+                        Culpa aut quasi vitae sunt modi laboriosam a
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Moses
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:39:37 +0200"} September 15, 2013 - 17:39
+                            %i.icon-time
+                      .body
+                        Doloribus neque qui eius laborum est nemo impedit aliquid et
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:38:37 +0200"} September 15, 2013 - 17:38
+                            %i.icon-time
+                      .body
+                        Ut et nam ut eos aut est id quo veniam corrupti itaque voluptatem repellat rerum
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:37:37 +0200"} September 15, 2013 - 17:37
+                            %i.icon-time
+                      .body
+                        Quo voluptas necessitatibus sint molestias
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:36:37 +0200"} September 15, 2013 - 17:36
+                            %i.icon-time
+                      .body
+                        Sed quo voluptatem illo quam qui itaque ad
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Moses
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:35:37 +0200"} September 15, 2013 - 17:35
+                            %i.icon-time
+                      .body
+                        Ea optio quod vel eligendi est voluptates repellat est aliquam quia nihil beatae sit
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:34:37 +0200"} September 15, 2013 - 17:34
+                            %i.icon-time
+                      .body
+                        Qui in ratione reiciendis possimus ipsum voluptatem quidem aut unde excepturi ut harum minus dolorum
+                    %li.message
+                      .avatar
+                        %img{:alt => "Avatar", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+                      .name-and-time
+                        .name.pull-left
+                          %small
+                            %a.text-contrast{:href => "#"} Tomas
+                        .time.pull-right
+                          %small.date.pull-right.text-muted
+                            %span.timeago.fade.has-tooltip{"data-placement" => "top", :title => "2013-09-15 17:33:37 +0200"} September 15, 2013 - 17:33
+                            %i.icon-time
+                      .body
+                        Ea cum illum eum occaecati qui culpa et consequatur ut aspernatur distinctio
+                %form.new-message{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
+                  %input{:name => "authenticity_token", :type => "hidden"}/
+                  %input#message_body.form-control{:name => "message[body]", :placeholder => "Type your message here...", :type => "text"}/
+                  %button.btn.btn-success{:type => "submit"}
+                    %i.icon-plus
+    .col-sm-6
+      .row
+        .col-sm-12
+          .box
+            .box-header.blue-background
+              .title
+                .icon-envelope-alt
+                Quick e-mail
+              .actions
+                %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+                  %i.icon-remove
+                %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+                  %i
+            .box-content
+              .form-group
+                %input.form-control{:name => "email", :placeholder => "E-mail", :type => "text", :value => ""}/
+              .form-group
+                %textarea#body.form-control.wysihtml5{:placeholder => "Your message...", :rows => "5"}
+              .text-right
+                %a.btn.btn-primary{:href => "#"} Send
+  .group-header
+    .row
+      .col-sm-6.col-sm-offset-3
+        .text-center
+          %h2 Calendar & Tasks
+          %small.text-muted Events in calendar can be dragged from day to another day, or you can extend event on more days!
+  .row
+    .col-sm-6
+      .row
+        .col-sm-12
+          .box.box-bordered.purple-border
+            .box-header.purple-background
+              .title
+                %i.icon-calendar
+                Calendar
+            .box-content
+              .full-calendar-demo
+    .col-sm-6
+      .row
+        .col-sm-12
+          .box
+            .box-header.green-background
+              .title
+                .icon-tasks
+                Tasks
+              .actions
+                %a.btn.box-remove.btn-xs.btn-link{:href => "#"}
+                  %i.icon-remove
+                %a.btn.box-collapse.btn-xs.btn-link{:href => "#"}
+                  %i
+            .box-content
+              %ul.list-unstyled.tasks
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Cras sed tellus velit
+                    %small.pull-right 40%
+                  .progress.progress-small
+                    .progress-bar{:style => "width: 40%"}
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Quis posuere tortor - maecenas in risus
+                    %small.pull-right 80%
+                  .progress.progress-small
+                    .progress-bar.progress-bar-danger{:style => "width: 80%"}
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Donec sodales justo in lacus sagittis
+                    %small.pull-right 58%
+                  .progress.progress-small
+                    .progress-bar-success.progress-bar{:style => "width: 68%"}
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Etiam condimentum sem nec
+                    %small.pull-right 100%
+                  .progress.progress-small
+                    .progress-bar.progress-bar-warning{:style => "width: 100%"}
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Etiam condimentum sem nec
+                    %small.pull-right 24%
+                  .progress.progress-small
+                    .progress-bar.progress-bar-info{:style => "width: 24%"}
+                %li
+                  .task
+                    %span.pull-left
+                      %a{:href => "#"} Id mi placerat
+                    %small.pull-right 10%
+                  .progress.progress-small
+                    .progress-bar.progress-bar-success{:style => "width: 10%"}
+
+= render 'shared/javascripts'

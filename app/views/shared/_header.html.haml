@@ -1,0 +1,141 @@
+%header
+  %nav.navbar.navbar-default
+    %a.navbar-brand{:href => "index.html"}
+      %img.logo{:alt => "Flatty", :height => "21", :src => asset_path("logo.svg"), :width => "81"}/
+      %img.logo-xs{:alt => "Flatty", :height => "21", :src => asset_path("logo_xs.svg"), :width => "21"}/
+    %a.toggle-nav.btn.pull-left{:href => "#"}
+      %i.icon-reorder
+    %ul.nav
+      %li.dropdown.light.only-icon
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %i.icon-cog
+        %ul.dropdown-menu.color-settings
+          %li.color-settings-body-color
+            .color-title Body color
+            %a{"data-change-to" => "assets/stylesheets/light-theme.css", :href => "#"}
+              Light
+              %small (default)
+            %a{"data-change-to" => "assets/stylesheets/dark-theme.css", :href => "#"}
+              Dark
+            %a{"data-change-to" => "assets/stylesheets/dark-blue-theme.css", :href => "#"}
+              Dark blue
+          %li.divider
+          %li.color-settings-contrast-color
+            .color-title Contrast color
+            %a{"data-change-to" => "contrast-red", :href => "#"}
+              %i.icon-cog.text-red
+              Red
+              %small (default)
+            %a{"data-change-to" => "contrast-blue", :href => "#"}
+              %i.icon-cog.text-blue
+              Blue
+            %a{"data-change-to" => "contrast-orange", :href => "#"}
+              %i.icon-cog.text-orange
+              Orange
+            %a{"data-change-to" => "contrast-purple", :href => "#"}
+              %i.icon-cog.text-purple
+              Purple
+            %a{"data-change-to" => "contrast-green", :href => "#"}
+              %i.icon-cog.text-green
+              Green
+            %a{"data-change-to" => "contrast-muted", :href => "#"}
+              %i.icon-cog.text-muted
+              Muted
+            %a{"data-change-to" => "contrast-fb", :href => "#"}
+              %i.icon-cog.text-fb
+              Facebook
+            %a{"data-change-to" => "contrast-dark", :href => "#"}
+              %i.icon-cog.text-dark
+              Dark
+            %a{"data-change-to" => "contrast-pink", :href => "#"}
+              %i.icon-cog.text-pink
+              Pink
+            %a{"data-change-to" => "contrast-grass-green", :href => "#"}
+              %i.icon-cog.text-grass-green
+              Grass green
+            %a{"data-change-to" => "contrast-sea-blue", :href => "#"}
+              %i.icon-cog.text-sea-blue
+              Sea blue
+            %a{"data-change-to" => "contrast-banana", :href => "#"}
+              %i.icon-cog.text-banana
+              Banana
+            %a{"data-change-to" => "contrast-dark-orange", :href => "#"}
+              %i.icon-cog.text-dark-orange
+              Dark orange
+            %a{"data-change-to" => "contrast-brown", :href => "#"}
+              %i.icon-cog.text-brown
+              Brown
+      %li.dropdown.medium.only-icon.widget
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %i.icon-rss
+          .label 5
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"}
+              .widget-body
+                .pull-left.icon
+                  %i.icon-user.text-success
+                .pull-left.text
+                  John Doe signed up
+                  %small.text-muted just now
+          %li.divider
+          %li
+            %a{:href => "#"}
+              .widget-body
+                .pull-left.icon
+                  %i.icon-inbox.text-error
+                .pull-left.text
+                  New Order #002
+                  %small.text-muted 3 minutes ago
+          %li.divider
+          %li
+            %a{:href => "#"}
+              .widget-body
+                .pull-left.icon
+                  %i.icon-comment.text-warning
+                .pull-left.text
+                  America Leannon commented Flatty with veeery long text.
+                  %small.text-muted 1 hour ago
+          %li.divider
+          %li
+            %a{:href => "#"}
+              .widget-body
+                .pull-left.icon
+                  %i.icon-user.text-success
+                .pull-left.text
+                  Jane Doe signed up
+                  %small.text-muted last week
+          %li.divider
+          %li
+            %a{:href => "#"}
+              .widget-body
+                .pull-left.icon
+                  %i.icon-inbox.text-error
+                .pull-left.text
+                  New Order #001
+                  %small.text-muted 1 year ago
+          %li.widget-footer
+            %a{:href => "#"} All notifications
+      %li.dropdown.dark.user-menu
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          %img{:alt => "Mila Kunis", :height => "23", :src => asset_path("avatar.jpg"), :width => "23"}/
+          %span.user-name Mila Kunis
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "user_profile.html"}
+              %i.icon-user
+              Profile
+          %li
+            %a{:href => "user_profile.html"}
+              %i.icon-cog
+              Settings
+          %li.divider
+          %li
+            %a{:href => "sign_in.html"}
+              %i.icon-signout
+              Sign out
+    %form.navbar-form.pull-right.hidden-xs{:action => "search_results.html", :method => "get"}
+      %button.btn.btn-link.icon-search{:name => "button", :type => "submit"}
+      .form-group
+        %input#q_header.form-control{:autocomplete => "off", :name => "q", :placeholder => "Search...", :type => "text", :value => ""}/

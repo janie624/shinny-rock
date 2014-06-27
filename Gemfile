@@ -38,3 +38,22 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'haml',                       '4.0.5'
+gem 'bootstrap-sass',             '3.1.1.1'
+gem 'bourbon',                    '3.1.8'
+gem 'jquery-ui-rails',            '4.2.1'            
+
+group :development, :test do
+  gem 'database_cleaner',         '1.3.0'
+  gem 'ffaker',                   '1.24.0'
+  gem 'factory_girl_rails',       '4.4.1'
+end
+
+group :development do
+end
+
+group :test do
+  gem 'shoulda-matchers',         '2.6.1'
+  gem 'rspec-rails',              '2.14.2'
+  gem 'cucumber-rails',           '1.4.1',    :require => false
+end
