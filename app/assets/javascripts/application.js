@@ -67,4 +67,5 @@
 //= require flatty/plugins/modernizr/modernizr.min
 //= require flatty/plugins/lightbox/lightbox.min
 //= require flatty/plugins/typeahead/typeahead
+//= require flatty/theme
 // require_tree .
