@@ -56,4 +56,5 @@ group :test do
   gem 'shoulda-matchers',         '2.6.1'
   gem 'rspec-rails',              '2.14.2'
   gem 'cucumber-rails',           '1.4.1',    :require => false
+  gem 'selenium-webdriver',       '2.42.0'
 end

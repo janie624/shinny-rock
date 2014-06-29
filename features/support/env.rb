@@ -56,3 +56,14 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+DatabaseCleaner.clean_with(:truncation)
+
+Before('@java_script') do
+  Capybara.current_driver = :selenium
+end
+
+After('@java_script') do
+  Capybara.use_default_driver
+end
+
+
