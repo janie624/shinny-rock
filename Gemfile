@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,11 +43,11 @@ gem 'jquery-ui-rails',            '4.2.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]          
 
 group :production, :staging do
-  gem 'pg'
+  gem 'pg',                       '0.17.1'
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3',                  '1.3.9'
   gem 'database_cleaner',         '1.3.0'
   gem 'ffaker',                   '1.24.0'
   gem 'factory_girl_rails',       '4.4.1'
