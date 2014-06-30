@@ -13,11 +13,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true 
     = csrf_meta_tags
 
-  %body.contrast-red
-    = render 'shared/header'
-    = render 'shared/sidebar'
-
+  %body.contrast-dark
     #wrapper
+      = render 'shared/header'
+      = render 'shared/sidebar'
       %section#content
         .container
           #content-wrapper.row
