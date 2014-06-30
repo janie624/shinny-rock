@@ -41,7 +41,8 @@ gem 'spring',        group: :development
 gem 'haml',                       '4.0.5'
 gem 'bootstrap-sass',             '3.1.1.1'
 gem 'bourbon',                    '3.1.8'
-gem 'jquery-ui-rails',            '4.2.1'            
+gem 'jquery-ui-rails',            '4.2.1'  
+gem 'tzinfo-data', platforms: [:mingw, :mswin]          
 
 group :development, :test do
   gem 'database_cleaner',         '1.3.0'
