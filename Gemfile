@@ -44,6 +44,10 @@ gem 'bourbon',                    '3.1.8'
 gem 'jquery-ui-rails',            '4.2.1'  
 gem 'tzinfo-data', platforms: [:mingw, :mswin]          
 
+group :production, :staging do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'database_cleaner',         '1.3.0'
   gem 'ffaker',                   '1.24.0'

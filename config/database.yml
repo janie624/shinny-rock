@@ -21,8 +21,12 @@ test: &test
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: shinny-rock
+  pool: 5
+  username: shinny-rock
+  password: shinny-rock
 
 cucumber:
   <<: *test
