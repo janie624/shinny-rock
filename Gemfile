@@ -49,6 +49,7 @@ group :production, :staging do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'database_cleaner',         '1.3.0'
   gem 'ffaker',                   '1.24.0'
   gem 'factory_girl_rails',       '4.4.1'
